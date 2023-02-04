@@ -21,7 +21,7 @@ function buyWspPerClick() {
 }
 
 var mainGameLoop = window.setInterval(function() {
-    diff = date.now() - gameData.lastTick;
+    diff = Date.now() - gameData.lastTick;
     gameData.lastTick = Date.now() // Update lastTick
     gameData.wsp += gameData.wspPerClick * (diff / 1000)
     document.getElementById("wspGained").innerHTML = gameData.wsp + " WSP gained"
