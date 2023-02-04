@@ -1,7 +1,8 @@
 var gameData = {
     wsp: 0,
     wspPerClick: 1,
-    wspPerClickCost: 10
+    wspPerClickCost: 10,
+    lastTick: Date.now()
 }
 
 function playWord() {
@@ -20,7 +21,10 @@ function buyWspPerClick() {
 }
 
 var mainGameLoop = window.setInterval(function() {
-    playWord()
+    diff = date.now() - gameData.lastTick;
+    gameData.lastTick = Date.now() // Update lastTick
+    gameData.wsp += gameData.wspPerClick * (diff / 1000)
+    document.getElementById("wspGained").innerHTML = gameData.wsp + " WSP gained"
 }, 1000)
 
 var saveGameLoop = window.setInterval(function() {
