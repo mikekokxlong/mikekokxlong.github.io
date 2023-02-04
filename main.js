@@ -29,5 +29,5 @@ var saveGameLoop = window.setInterval(function() {
 
 var savegame = JSON.parse(localStorage.getItem("wordSoupSave"))
 if (savegame !== null) {
-    gameData = savegame
+  gameData = savegame
 }
